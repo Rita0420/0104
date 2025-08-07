@@ -90,3 +90,5 @@ class DB{
         return $tmp;
     }
 }
+
+$Title=new DB("title");
