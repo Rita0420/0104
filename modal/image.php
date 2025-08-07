@@ -1,5 +1,5 @@
 <h3 class="cent">新增校園映像圖片</h3>
-<form action="../api/insert.php" method="post" enctype="multipart/form-data">
+<form action="./api/insert.php" method="post" enctype="multipart/form-data">
     <div class="cent">
         <div>
             <label for="img">校園映像圖片:</label>

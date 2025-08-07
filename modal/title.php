@@ -1,5 +1,5 @@
 <h3 class="cent">新增網站標題管理</h3>
-<form action="../api/insert.php" method="post" enctype="multipart/form-data">
+<form action="./api/insert.php" method="post" enctype="multipart/form-data">
     <div class="cent">
         <div>
             <label for="img">標題區圖片:</label>

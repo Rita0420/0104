@@ -7,12 +7,16 @@ $data=[
     'mvim'=>[
         'header'=>'更換動畫圖片',
         'label'=>'動畫圖片'
+    ],
+    'image'=>[
+        'header'=>'更換校園映像圖片',
+        'label'=>'校園映像圖片'
     ]
 ]
 ?>
 
 <h3 class="cent"><?=$data[$_GET['table']]['header'];?></h3>
-<form action="../api/upadte.php" method="post" enctype="multipart/form-data">
+<form action="./api/upadte.php" method="post" enctype="multipart/form-data">
     <div class="cent">
         <div>
             <label for="img"><?=$data[$_GET['table']]['label'];?>:</label>

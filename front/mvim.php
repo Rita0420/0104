@@ -17,7 +17,7 @@
                 ?>
                 <tr>
                     <td>
-                        <img src="../images/<?=$row['img'];?>" alt="" style="width: 100px;">
+                        <img src="./images/<?=$row['img'];?>" alt="" style="width: 100px;">
                     </td>
                     <td>
                         <input type="checkbox" name="sh[]" id="sh" <?=($row['sh']==1)?"checked":"";?> value="<?=$row['id'];?>">
@@ -26,7 +26,7 @@
                         <input type="checkbox" name="del[]" id="del" value="<?=$row['id'];?>">
                     </td>
                     <td>
-                        <input type="button" value="更換圖片" onclick="op('#cover','#cvr','../modal/update.php?table=<?=$do;?>&id=<?=$row['id'];?>')">
+                        <input type="button" value="更換圖片" onclick="op('#cover','#cvr','./modal/update.php?table=<?=$do;?>&id=<?=$row['id'];?>')">
                     </td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>
@@ -37,7 +37,7 @@
         <table style="margin-top:40px; width:70%;">
             <tbody>
                 <tr>
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','../modal/<?=$do;?>.php?table=<?=$do;?>')"
+                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','./modal/<?=$do;?>.php?table=<?=$do;?>')"
                             value="新增動畫圖片"></td>
                     <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置">
                     </td>

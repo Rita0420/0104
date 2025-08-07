@@ -1,5 +1,5 @@
 <h3 class="cent">新增使用者帳號</h3>
-<form action="../api/insert.php" method="post" enctype="multipart/form-data">
+<form action="./api/insert.php" method="post" enctype="multipart/form-data">
     <div class="cent">
         <div>
             <label for="acc">帳號:</label>
