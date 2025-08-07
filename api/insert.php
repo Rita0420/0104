@@ -15,7 +15,10 @@ switch ($table) {
         $_POST['sh']=0;
         break;
     case 'admin':
-        
+        break;
+    case 'menu':
+        $_POST['main_id']=0;
+        $_POST['sh']=1;
         break;
     
     default:
