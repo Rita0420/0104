@@ -11,8 +11,19 @@ if(isset($_POST['id'])){
             $db->del($id);
         }else{
             $row=$db->find($id);
+            switch ($table) {
+                case 'title':
                     $row['text']=$_POST['text'][$key];
                     $row['sh']=($_POST['sh']==$id)?1:0;
+                break;
+                
+                default:
+                    if(isset($_POST['text'])){
+                        $row['text']=$_POST['text'][$key];
+                    }
+                    $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
+                    break;
+            }
               
 
                $db->save($row);
