@@ -98,3 +98,4 @@ $Image=new DB("image");
 $Total=new DB("total");
 $Bottom=new DB("bottom");
 $News=new DB("news");
+$Admin=new DB("admin");

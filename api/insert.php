@@ -14,6 +14,9 @@ switch ($table) {
     case 'title':
         $_POST['sh']=0;
         break;
+    case 'admin':
+        
+        break;
     
     default:
         $_POST['sh']=1;

@@ -16,6 +16,13 @@ if(isset($_POST['id'])){
                     $row['text']=$_POST['text'][$key];
                     $row['sh']=($_POST['sh']==$id)?1:0;
                 break;
+                case 'admin':
+                    $row['acc']=$_POST['acc'][$key];
+                    $row['pw']=$_POST['pw'][$key];
+                    
+                break;
+
+
                 
                 default:
                     if(isset($_POST['text'])){
