@@ -22,7 +22,7 @@
     </div>
     <iframe style="display:none;" name="back" id="back"></iframe>
     <div id="main">
-        <a title="" href="./home_files/home.htm">
+        <a title="" href="index.php">
             <div class="ti"
                 style="background:url('./images/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
             <!--標題-->
@@ -32,7 +32,7 @@
                 <div id="menuput" class="dbor">
                     <!--主選單放此-->
                     <span class="t botli">主選單區</span>
-					<?php
+                    <?php
 					$menus=$Menu->all(['sh'=>1,'main_id'=>0]);
 					foreach($menus as $menu){
 						echo "<div class='mainmu'>";
@@ -60,16 +60,16 @@
             <div class="di"
                 style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
                 <marquee scrolldelay="120" direction="left" style="position:absolute; width:100%; height:40px;">
-                <?php
+                    <?php
 				$ads=$Ad->all(['sh'=>1]);
 				foreach($ads as $ad){
 					echo $ad['text']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 				?>
-				</marquee>
+                </marquee>
                 <div style="height:32px; display:block;"></div>
                 <!--正中央-->
-				<?php
+                <?php
 				$do=$_GET['do']??'main';
 				$file="./front/$do.php";
 				if(file_exists($file)){
@@ -78,56 +78,57 @@
 					include_once "./front/main.php";
 				}
 				?>
-            <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
-                <!--右邊-->
-                <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
-                    onclick="lo('?do=admin')">管理登入</button>
-                <div style="width:89%; height:480px;" class="dbor">
-                    <span class="t botli">校園映象區</span>
-					<div onclick="pp(1)" class="cent">
-						<img src="./icon/up.jpg" alt="">
-					</div>
-					<?php
+			</div>
+                <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
+                    <!--右邊-->
+                    <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
+                        onclick="lo('?do=admin')">管理登入</button>
+                    <div style="width:89%; height:480px;" class="dbor">
+                        <span class="t botli">校園映象區</span>
+                        <div onclick="pp(1)" class="cent">
+                            <img src="./icon/up.jpg" alt="">
+                        </div>
+                        <?php
 					$images=$Image->all(['sh'=>1]);
 					foreach($images as $key =>$image):
 					?>
-					<div id="ssaa<?=$key;?>" class="im" style="width: 150px;height:103px;">
-						<img src="./images/<?=$image['img'];?>" alt="" width="100%">
-					</div>
-					<?php endforeach;?>
-					<div onclick="pp(2)" class="cent">
-						<img src="./icon/dn.jpg" alt="">
-					</div>
+                        <div id="ssaa<?=$key;?>" class="im" style="width: 150px;height:103px;">
+                            <img src="./images/<?=$image['img'];?>" alt="" width="100%">
+                        </div>
+                        <?php endforeach;?>
+                        <div onclick="pp(2)" class="cent">
+                            <img src="./icon/dn.jpg" alt="">
+                        </div>
 
-                    <script>
-                    var nowpage = 0,
-                        num = <?=$Image->count(['sh'=>1]);?>;
+                        <script>
+                        var nowpage = 0,
+                            num = <?=$Image->count(['sh'=>1]);?>;
 
-                    function pp(x) {
-                        var s, t;
-                        if (x == 1 && nowpage - 1 >= 0) {
-                            nowpage--;
+                        function pp(x) {
+                            var s, t;
+                            if (x == 1 && nowpage - 1 >= 0) {
+                                nowpage--;
+                            }
+                            if (x == 2 && (nowpage + 1) * 3 <= num * 1 + 3) {
+                                nowpage++;
+                            }
+                            $(".im").hide()
+                            for (s = 0; s <= 2; s++) {
+                                t = s * 1 + nowpage * 1;
+                                $("#ssaa" + t).show()
+                            }
                         }
-                        if (x == 2 && (nowpage + 1) * 3 <= num * 1 + 3) {
-                            nowpage++;
-                        }
-                        $(".im").hide()
-                        for (s = 0; s <= 2; s++) {
-                            t = s * 1 + nowpage * 1;
-                            $("#ssaa" + t).show()
-                        }
-                    }
-                    pp(1)
-                    </script>
+                        pp(1)
+                        </script>
+                    </div>
                 </div>
             </div>
+            <div style="clear:both;"></div>
+            <div
+                style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
+                <span class="t" style="line-height:123px;"><?=$Bottom->find(1)['bottom'];?></span>
+            </div>
         </div>
-        <div style="clear:both;"></div>
-        <div
-            style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-            <span class="t" style="line-height:123px;"><?=$Bottom->find(1)['bottom'];?></span>
-        </div>
-    </div>
 
 </body>
 
