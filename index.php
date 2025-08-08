@@ -64,9 +64,24 @@
                     onclick="lo('?do=admin')">管理登入</button>
                 <div style="width:89%; height:480px;" class="dbor">
                     <span class="t botli">校園映象區</span>
+					<div onclick="pp(1)" class="cent">
+						<img src="./icon/up.jpg" alt="">
+					</div>
+					<?php
+					$images=$Image->all(['sh'=>1]);
+					foreach($images as $key =>$image):
+					?>
+					<div id="ssaa<?=$key;?>" class="im" style="width: 150px;height:103px;">
+						<img src="./images/<?=$image['img'];?>" alt="" width="100%">
+					</div>
+					<?php endforeach;?>
+					<div onclick="pp(2)" class="cent">
+						<img src="./icon/dn.jpg" alt="">
+					</div>
+
                     <script>
                     var nowpage = 0,
-                        num = 0;
+                        num = <?=$Image->count(['sh'=>1]);?>;
 
                     function pp(x) {
                         var s, t;
